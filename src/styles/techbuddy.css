@@ -1,0 +1,207 @@
+/* ========================================
+   TECH BUDDY — College Friends
+   ======================================== */
+
+.techbuddy {
+  padding: var(--section-padding);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 245, 0.01) 50%, transparent 100%);
+}
+
+.techbuddy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Buddy Card */
+.buddy-card {
+  transition: var(--transition-normal);
+  transform: translateY(0);
+}
+
+.buddy-card:hover {
+  transform: translateY(-4px);
+}
+
+.buddy-card .terminal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Avatar + Name row */
+.buddy-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.buddy-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--terminal-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-text-cyan);
+  background: linear-gradient(135deg, rgba(0, 255, 245, 0.08), rgba(255, 0, 255, 0.08));
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.buddy-card:hover .buddy-avatar {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 245, 0.2);
+}
+
+.buddy-name-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.buddy-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text-bright);
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  transition: var(--transition-fast);
+}
+
+.buddy-card:hover .buddy-name {
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-text-cyan);
+}
+
+.buddy-tag {
+  font-size: 11px;
+  color: var(--neon-green);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Bio */
+.buddy-bio {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Skills */
+.buddy-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.buddy-skill-tag {
+  font-size: 10px;
+  padding: 3px 10px;
+  border: 1px solid rgba(255, 0, 255, 0.2);
+  border-radius: 2px;
+  color: var(--neon-magenta);
+  background: rgba(255, 0, 255, 0.04);
+  letter-spacing: 0.5px;
+}
+
+/* Social Links */
+.buddy-socials {
+  display: flex;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--terminal-border);
+}
+
+.buddy-social-link {
+  font-size: 12px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+  padding: 4px 10px;
+  border: 1px solid var(--terminal-border);
+  border-radius: var(--radius-sm);
+}
+
+.buddy-social-link:hover {
+  color: var(--neon-cyan);
+  border-color: rgba(0, 255, 245, 0.3);
+  background: rgba(0, 255, 245, 0.05);
+  text-shadow: var(--glow-text-cyan);
+}
+
+.buddy-social-link .social-icon {
+  font-size: 14px;
+}
+
+/* Group Photo */
+.buddy-group-photo {
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.group-photo-wrapper {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.group-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: saturate(0.85) contrast(1.05);
+  transition: var(--transition-normal);
+}
+
+.buddy-group-photo:hover .group-photo-img {
+  filter: saturate(1.1) contrast(1.1);
+}
+
+.group-photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 255, 245, 0.02) 3px,
+    rgba(0, 255, 245, 0.02) 6px
+  );
+}
+
+.group-photo-caption {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 14px;
+  letter-spacing: 0.5px;
+}
+
+.buddy-group-photo:hover .terminal-window {
+  border-color: rgba(0, 255, 245, 0.4);
+  box-shadow: 0 0 30px rgba(0, 255, 245, 0.08);
+}
+
+@media (max-width: 768px) {
+  .techbuddy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .buddy-group-photo {
+    max-width: 100%;
+  }
+}

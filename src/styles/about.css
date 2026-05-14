@@ -1,0 +1,142 @@
+/* ========================================
+   ABOUT — Terminal Bio
+   ======================================== */
+
+.about {
+  padding: var(--section-padding);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Profile Card */
+.about-profile {
+  position: relative;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 24px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--terminal-border);
+  filter: saturate(0.8);
+  transition: var(--transition-normal);
+}
+
+.profile-image:hover {
+  filter: saturate(1.2);
+  border-color: var(--neon-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.profile-glitch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 245, 0.03) 2px,
+    rgba(0, 255, 245, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: var(--radius-md);
+}
+
+.profile-label {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
+
+.profile-label span {
+  color: var(--neon-green);
+}
+
+/* System Info */
+.about-system-info {
+  margin-top: 30px;
+}
+
+.system-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 255, 245, 0.05);
+  font-size: 13px;
+}
+
+.system-row .label {
+  color: var(--neon-cyan);
+}
+
+.system-row .value {
+  color: var(--text-secondary);
+}
+
+/* Bio terminal */
+.about-bio .terminal-body {
+  font-size: 13px;
+}
+
+.about-bio .bio-text {
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-top: 12px;
+  padding-left: 0;
+}
+
+.about-bio .bio-text p {
+  margin-bottom: 16px;
+}
+
+/* Traits */
+.about-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.trait-tag {
+  font-size: 11px;
+  padding: 4px 12px;
+  border: 1px solid var(--terminal-border);
+  border-radius: 2px;
+  color: var(--neon-green);
+  background: rgba(57, 255, 20, 0.04);
+  transition: var(--transition-fast);
+}
+
+.trait-tag:hover {
+  border-color: var(--neon-green);
+  box-shadow: var(--glow-green);
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .profile-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}

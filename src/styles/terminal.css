@@ -1,0 +1,90 @@
+/* ========================================
+   TERMINAL WINDOW — Reusable Component
+   ======================================== */
+
+.terminal-window {
+  background: var(--bg-card);
+  border: 1px solid var(--terminal-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.terminal-window:hover {
+  border-color: rgba(0, 255, 245, 0.3);
+  box-shadow: 0 0 30px rgba(0, 255, 245, 0.05);
+}
+
+/* Header bar */
+.terminal-header {
+  background: var(--terminal-header);
+  border-bottom: 1px solid var(--terminal-border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ff5f57; }
+.terminal-dot.yellow { background: #ffbd2e; }
+.terminal-dot.green { background: #28c840; }
+
+.terminal-title {
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+.terminal-actions {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* Body */
+.terminal-body {
+  padding: 24px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.terminal-line {
+  margin-bottom: 4px;
+}
+
+.terminal-line .prompt {
+  color: var(--neon-cyan);
+  margin-right: 8px;
+}
+
+.terminal-line .command {
+  color: var(--neon-green);
+}
+
+.terminal-line .output {
+  color: var(--text-secondary);
+  padding-left: 20px;
+}
+
+.terminal-line .flag {
+  color: var(--neon-amber);
+}
+
+.terminal-line .string {
+  color: var(--neon-magenta);
+}
+
+.terminal-line .comment {
+  color: var(--text-dim);
+  font-style: italic;
+}
